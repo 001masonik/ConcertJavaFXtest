@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.concertjavafx.gui.MainFrame">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Список пісень для голосування" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <TableView fx:id="songTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="nameCol" text="Назва пісні" prefWidth="150"/>
+            <TableColumn fx:id="artistCol" text="Виконавець" prefWidth="150"/>
+            <TableColumn fx:id="votesCol" text="Голоси" prefWidth="80"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Проголосувати" onAction="#handleVote" style="-fx-base: #4CAF50; -fx-text-fill: white;"/>
+        <Button text="Оновити" onAction="#refreshData"/>
+    </HBox>
+</VBox>
